@@ -95,9 +95,9 @@ export class H5PStandalone {
 
         const contentId = options.id || Math.random().toString(36).substr(2, 9);
         // @ts-ignore
-        return this.render(contentId,options)
+        return this.render(anchorElement,contentId,options)
     }
-    async render(contentId,options){
+    async render(anchorElement,contentId,options){
         return this.prepareH5PEnvironment(contentId, options)
             .then((H5PIntegration: H5PIntegration) => {
 
