@@ -94,6 +94,7 @@ export class H5PStandalone {
     constructor(anchorElement: HTMLElement, options: Options) {
 
         const contentId = options.id || Math.random().toString(36).substr(2, 9);
+        // @ts-ignore
         return this.render(contentId,options)
     }
     async render(contentId,options){
