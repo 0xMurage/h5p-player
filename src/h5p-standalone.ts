@@ -94,9 +94,9 @@ export class H5PStandalone {
     constructor(anchorElement: HTMLElement, options: Options) {
 
         const contentId = options.id || Math.random().toString(36).substr(2, 9);
-
-        //TODO: this should be moved to a callable function in future e.g render() function
-        // @ts-ignore
+        return this.render(contentId,options)
+    }
+    async render(contentId,options){
         return this.prepareH5PEnvironment(contentId, options)
             .then((H5PIntegration: H5PIntegration) => {
 
@@ -121,7 +121,6 @@ export class H5PStandalone {
                         return contentId; //better than nothing
                     })
             });
-
     }
 
     async renderPlayerFrame(params: PlayerFrameOptions) {
